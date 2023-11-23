@@ -54,6 +54,11 @@ body {
   font-weight: 400;
   font-size: 1.8rem;
 }
+
+.formulario select option {
+  background-color: rgb(209, 199, 199);
+  color: #2b353b;
+}
 .formulario input[type="submit"] {
   background-color: var(--primary);
   border: none;
@@ -64,6 +69,7 @@ body {
   cursor: pointer;
   padding: 1rem;
   margin-top: 2rem;
+  border-radius: 5px;
 }
 .campo ::placeholder { 
   color: var(--blanco);
