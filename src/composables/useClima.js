@@ -5,12 +5,14 @@ export default function useClima () {
 
     const clima = ref({})
     const cargando = ref(false)
+    const error = ref('')
 
     const obtenerClima = async ({ciudad, pais}) => {
         //Importar el Api Key
         const key = import.meta.env.VITE_API_KEY
         cargando.value = true
         clima.value = {}
+        error.value = ''
 
         //Obtener la lat, lng
         try {
@@ -25,8 +27,8 @@ export default function useClima () {
 
             clima.value = resultado
 
-        } catch (error) {
-            console.log(error)
+        } catch (err) {
+            error.value = "Ciudad no encontrada"
         } finally {
             cargando.value = false
         }
@@ -45,6 +47,7 @@ export default function useClima () {
         clima,
         mostrarClima,
         formatearTemperatura,
-        cargando
+        cargando,
+        error
     }
 }
