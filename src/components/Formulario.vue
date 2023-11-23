@@ -27,7 +27,7 @@
         }
 
         error.value = ''
-        emit('obtener-clima')
+        emit('obtener-clima', busqueda)
     }
 </script>
 
